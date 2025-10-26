@@ -26,6 +26,19 @@ swift --version
 # Swift version 6.2 (swift-6.2-RELEASE)
 ```
 
+### Native libraries
+
+The Linux build of xtool depends on the libimobiledevice stack. On Debian and Ubuntu machines you can install and update the
+required libraries in one step:
+
+```bash
+./scripts/bootstrap-linux.sh --install
+```
+
+The script installs the relevant `apt` packages, builds current releases of `libplist`, `libimobiledevice-glue`, `libusbmuxd`,
+`libtatsu`, and `libimobiledevice`, and copies their `pkg-config` manifests so SwiftPM can discover them. Re-run the script with
+`--check` if you just want to verify your environment.
+
 ### usbmuxd
 
 xtool relies on [usbmuxd](https://github.com/libimobiledevice/usbmuxd) to talk to your iOS device from Linux.

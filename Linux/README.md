@@ -4,6 +4,21 @@ xtool currently uses AppImage to build its Linux CLI. It is possible to build an
 
 ## Setup
 
+### Native prerequisites (Ubuntu / Debian)
+
+xtool relies on the libimobiledevice stack when running on Linux. On Ubuntu or Debian hosts you can install everything with the
+provided bootstrap script:
+
+```
+./scripts/bootstrap-linux.sh --install
+```
+
+This command installs the required `apt` packages, builds the latest `libplist`, `libimobiledevice-glue`, `libusbmuxd`, `libtatsu`,
+and `libimobiledevice` releases from source, and ensures `pkg-config` can find them. You can re-run the script with `--check` to
+confirm the dependencies are available.
+
+### usbmuxd
+
 Make sure `usbmuxd` is installed on your host machine. On macOS, `usbmuxd` is preinstalled.
 
 ### Using Docker

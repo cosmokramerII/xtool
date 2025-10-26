@@ -5,6 +5,11 @@ shopt -s nullglob
 
 cd "$(dirname "$0")"
 
+if ! ../scripts/bootstrap-linux.sh --check >/dev/null; then
+    echo "[error] Missing native dependencies. Run ../scripts/bootstrap-linux.sh --install" >&2
+    exit 1
+fi
+
 if ! command -v fusermount &>/dev/null; then
     # Docker doesn't support FUSE
     export APPIMAGE_EXTRACT_AND_RUN=1
