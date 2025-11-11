@@ -7,7 +7,7 @@ import { spawn as spawnChild } from 'child_process';
 import { PtyManager, PtyRequest } from './pty';
 
 const isDev = !app.isPackaged;
-const store = new Store({
+const store: any = new Store({
   name: 'xtool-studio',
   defaults: {
     recentProjects: [] as string[],
