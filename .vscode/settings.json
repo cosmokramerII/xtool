@@ -1,3 +1,4 @@
 {
     "swiftlint.path": "./.tmp/swiftlint/swiftlint",
+    "swift.swiftEnvironmentVariables": {}
 }
